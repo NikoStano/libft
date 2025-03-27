@@ -6,7 +6,7 @@
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 23:54:44 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/03/27 15:25:49 by nistanoj         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:46:55 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*nlst;
 	t_list	*elem;
-	void	*new_content;
+	void	*ncont;
 
 	nlst = NULL;
 	while (lst)
 	{
-		new_content = f(lst->content);
-		if (!new_content)
+		ncont = f(lst->content);
+		if (!ncont)
 		{
 			ft_lstclear(&nlst, del);
 			return (NULL);
 		}
-		elem = ft_lstnew(new_content);
+		elem = ft_lstnew(ncont);
 		if (!elem)
 		{
 			ft_lstclear(&nlst, del);
-			del(new_content);
+			del(ncont);
 			return (NULL);
 		}
 		ft_lstadd_back(&nlst, elem);
