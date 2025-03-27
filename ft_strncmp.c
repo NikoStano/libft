@@ -6,7 +6,7 @@
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:11:23 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/02/26 22:03:55 by nistanoj         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:34:18 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	*str2;
 	size_t			i;
 
-	if (n == 0)
+	if (!n)
 		return (0);
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;

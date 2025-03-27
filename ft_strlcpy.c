@@ -6,7 +6,7 @@
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 19:13:49 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/03/11 21:43:33 by nistanoj         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:32:42 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 	i = 0;
 	srclen = ft_strlen(src);
-	if (size == 0)
+	if (!size)
 		return (srclen);
 	while (src[i] && i < size - 1)
 	{

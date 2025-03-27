@@ -6,7 +6,7 @@
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 00:54:25 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/03/27 01:21:30 by nistanoj         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:36:46 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,6 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	end;
 	size_t	i;
 
-	if (!s1)
-		return (NULL);
-	if (!set)
-		return ((char *)s1);
 	beg = 0;
 	end = ft_strlen(s1);
 	while (s1[beg] && inset(set, s1[beg]))

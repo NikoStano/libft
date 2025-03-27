@@ -6,7 +6,7 @@
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 17:17:53 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/03/27 14:30:10 by nistanoj         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:32:47 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_cntwrds(const char *s, char c)
 	size_t	i;
 	size_t	cnt;
 
-	if (s == NULL || s[0] == '\0')
+	if (!s || s[0] == '\0')
 		return (0);
 	i = 0;
 	cnt = 0;
@@ -44,7 +44,7 @@ char	*ft_substr_tochar(const char *s, char c, size_t *j)
 		(*j)++;
 	end = *j;
 	str = malloc((end - start + 1) * sizeof(char));
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (i < (end - start))
