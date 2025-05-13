@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 00:54:25 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/03/27 21:36:46 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/04/27 16:18:01 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/04/28 23:42:46 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	inset(const char *set, char c)
+static unsigned int	inset(const char *set, char c)
 {
 	size_t	i;
 

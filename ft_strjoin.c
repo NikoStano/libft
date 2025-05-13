@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 17:06:28 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/03/27 14:40:55 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/04/27 16:17:10 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/04/28 23:38:58 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	if (!s1)
 		return ((char *)s2);
-	join = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!join)
 		return (NULL);
 	i = 0;

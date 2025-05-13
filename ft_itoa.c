@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 00:38:11 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/03/27 13:54:14 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/04/27 16:12:51 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/04/28 23:41:27 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	lenint(int n)
+static size_t	lenint(int n)
 {
 	size_t	len;
 
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 		nb *= -1;
 	}
 	if (nb == 0)
-		str[0] = 48;
+		str[0] = '0';
 	while (nb != 0)
 	{
 		len--;

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 17:17:53 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/03/27 21:32:47 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/04/27 16:16:31 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/04/28 23:42:09 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_cntwrds(const char *s, char c)
+static size_t	ft_cntwrds(const char *s, char c)
 {
 	size_t	i;
 	size_t	cnt;
@@ -30,7 +30,7 @@ size_t	ft_cntwrds(const char *s, char c)
 	return (cnt);
 }
 
-char	*ft_substr_tochar(const char *s, char c, size_t *j)
+static char	*ft_substr_tochar(const char *s, char c, size_t *j)
 {
 	char	*str;
 	size_t	start;
@@ -56,7 +56,7 @@ char	*ft_substr_tochar(const char *s, char c, size_t *j)
 	return (str);
 }
 
-void	ft_free(char **split, size_t i)
+static void	ft_free(char **split, size_t i)
 {
 	size_t	j;
 
