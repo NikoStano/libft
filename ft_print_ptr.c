@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 16:14:47 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/04/27 16:14:48 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/04/27 20:56:11 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/09/03 15:50:37 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *list)
+int	ft_convert(size_t ptr)
 {
-	int	count;
+	int	ret;
 
-	count = 0;
-	while (list)
-	{
-		count++;
-		list = list->next;
-	}
-	return (count);
+	ret = 0;
+	if (ptr >= 16)
+		ret += ft_convert(ptr >> 4);
+	ret += ft_print_char("0123456789abcdef"[ptr & 0xf]);
+	return (ret);
+}
+
+int	ft_print_ptr(void *ptr)
+{
+	int	ret;
+
+	if (!ptr)
+		return (ft_print_str("(nil)"));
+	ret = 0;
+	ret += ft_print_str("0x");
+	ret += ft_convert((size_t)ptr);
+	return (ret);
 }

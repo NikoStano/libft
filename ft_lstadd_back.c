@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 16:14:06 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/04/27 16:14:07 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/04/27 16:13:54 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/09/04 12:20:13 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
+	t_list	*last;
 
-	if (!lst || !del)
+	if (!lst || !new)
 		return ;
-	while (*lst)
+	if (!*lst)
 	{
-		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = tmp;
+		*lst = new;
+		return ;
 	}
-	*lst = NULL;
+	last = ft_lstlast(*lst);
+	last->next = new;
 }

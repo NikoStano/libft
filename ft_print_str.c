@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 16:14:19 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/04/27 16:14:19 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/04/27 19:18:10 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/09/03 15:50:57 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_print_str(char *s)
 {
-	if (!lst || !f)
-		return ;
-	while (lst)
+	int	ret;
+	int	i;
+
+	if (!s)
+		return (ft_print_str("(null)"));
+	ret = 0;
+	i = 0;
+	while (s[i])
 	{
-		f(lst->content);
-		lst = lst->next;
+		ret += ft_print_char(s[i]);
+		i++;
 	}
+	return (ret);
 }

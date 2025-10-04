@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_free_sp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 16:14:34 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/04/27 16:14:36 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/09/15 16:46:27 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/09/30 16:52:18 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_free_sp(char **sp)
 {
-	t_list	*nlst;
-	t_list	*elem;
-	void	*ncont;
+	int	i;
 
-	nlst = NULL;
-	while (lst)
-	{
-		ncont = f(lst->content);
-		if (!ncont)
-		{
-			ft_lstclear(&nlst, del);
-			return (NULL);
-		}
-		elem = ft_lstnew(ncont);
-		if (!elem)
-		{
-			ft_lstclear(&nlst, del);
-			del(ncont);
-			return (NULL);
-		}
-		ft_lstadd_back(&nlst, elem);
-		lst = lst->next;
-	}
-	return (nlst);
+	if (!sp)
+		return ;
+	i = 0;
+	while (sp[i])
+		free(sp[i++]);
+	free(sp);
 }

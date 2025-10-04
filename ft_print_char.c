@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 16:14:12 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/04/27 16:14:13 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/04/27 18:34:59 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/09/03 15:48:22 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	ft_print_char(char c)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	const int	ret = write(1, &c, 1);
+
+	if (ret == -1)
+		return (-1);
+	return (ret);
 }

@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 16:13:54 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/04/27 16:13:55 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/08/21 19:39:57 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/09/03 15:53:00 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+long	ft_strtol(const char *nptr, char **endptr, int base)
 {
-	t_list	*last;
+	long		result;
+	int			sign;
+	const char	*ptr;
 
-	if (!lst || !new)
-		return ;
-	if (!*lst)
+	ptr = nptr;
+	while (ft_isspace((unsigned char)*ptr))
+		ptr++;
+	sign = 1;
+	if (*ptr == '-' || *ptr == '+')
 	{
-		*lst = new;
-		return ;
+		if (*ptr == '-')
+			sign = -1;
+		ptr++;
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+	result = 0;
+	while (*ptr && ft_isdigit((unsigned char)*ptr))
+	{
+		result = result * base + (*ptr - '0');
+		ptr++;
+	}
+	if (endptr)
+		*endptr = (char *)ptr;
+	return (result * sign);
 }

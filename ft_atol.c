@@ -1,20 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 16:18:12 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/08/05 02:50:47 by nistanoj         ###   ########.fr       */
+/*   Created: 2025/09/11 21:49:51 by nistanoj          #+#    #+#             */
+/*   Updated: 2025/09/12 16:59:58 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+long	ft_atol(const char *nptr)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c += 32);
-	return (c);
+	int			neg;
+	long long	nb;
+
+	neg = 1;
+	nb = 0;
+	while (ft_isspace(*nptr))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
+	{
+		if (*nptr == '-')
+			neg = -1;
+		nptr++;
+	}
+	while (ft_isdigit(*nptr))
+	{
+		nb = nb * 10 + *nptr - '0';
+		if (nb * neg > INT_MAX)
+			return ((long)INT_MAX + 1);
+		if (nb * neg < INT_MIN)
+			return ((long)INT_MIN - 1);
+		nptr++;
+	}
+	return (nb * neg);
 }

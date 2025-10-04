@@ -6,7 +6,7 @@
 /*   By: nistanoj <nistanoj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:12:17 by nistanoj          #+#    #+#             */
-/*   Updated: 2025/04/27 16:12:21 by nistanoj         ###   ########.fr       */
+/*   Updated: 2025/09/11 21:13:13 by nistanoj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int		i;
 	int		neg;
 	long	nb;
 
-	i = 0;
 	neg = 1;
 	nb = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (ft_isspace(*nptr))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (nptr[i] == '-')
+		if (*nptr == '-')
 			neg = -1;
-		i++;
+		nptr++;
 	}
-	while (ft_isdigit(nptr[i]))
+	while (ft_isdigit(*nptr))
 	{
-		nb = nb * 10 + nptr[i] - '0';
-		i++;
+		nb = nb * 10 + *nptr - '0';
+		nptr++;
 	}
 	return (nb * neg);
 }
