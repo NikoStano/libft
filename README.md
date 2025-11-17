@@ -1,4 +1,4 @@
-# 📚 Libft
+# 📚 Libft [![nistanoj's 42 Libft Score](https://badge.nimon.fr/api/v2/cmgjygisn1482501pa9h6l9sg4/project/4270267)](https://github.com/Nimon77/badge42)
 
 Libft est une bibliothèque en **C** regroupant un ensemble de fonctions utiles ré-implémentées à partir des standards de la libc, ainsi que des ajouts pratiques (gestion de chaînes, mémoire, listes chaînées, printf, get_next_line, etc.).  
 Ce projet constitue une base réutilisable pour tous les autres projets de l’école 42.  
